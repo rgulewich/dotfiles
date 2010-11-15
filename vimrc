@@ -4,6 +4,7 @@ syn on                  " syntax highlighting, please
 "" Misc:
 set nocompatible        " yay
 set visualbell          " why would anyone not have this?
+set hid                 " don't lose history when moving between buffers
 "" Indenting and tabs:
 set autoindent          " definitely autoindent
 set shiftwidth=4        " doing a '>' should move 4 spaces
@@ -20,7 +21,7 @@ set laststatus=2
 "" Searching:
 set hlsearch            " highlight search results
 set showmatch           " what does this do?
-set hid                 " don't lose history when moving between buffers
+set ignorecase          " make searches case-insensitive
 "" Backups:
 set backupdir=~/.vimbackups/
 set directory=~/.vimswap/
