@@ -1,0 +1,1 @@
+../../../3rdparty/vim-markdown/ftdetect/markdown.vim
