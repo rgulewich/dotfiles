@@ -6,11 +6,12 @@ set nocompatible        " yay
 set visualbell          " why would anyone not have this?
 set hid                 " don't lose history when moving between buffers
 "" Indenting and tabs:
-set autoindent          " definitely autoindent
+set smartindent         " smart autoindenting
 set shiftwidth=4        " doing a '>' should move 4 spaces
 set expandtab           " expand tabs to spaces
 set nowrap              " don't wrap at 80 chars
 set ts=4                " tab stops are 4 spaces
+set sts=4               " soft tab stops are 4 spaces
 ""  Prettiness:
 set background=dark     " how to set this depending on whether we're in the UI?
 colorscheme liquidcarbon " let's try this for a color scheme
