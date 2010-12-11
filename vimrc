@@ -23,7 +23,12 @@ set laststatus=2
 set hlsearch            " highlight search results
 set showmatch           " what does this do?
 set ignorecase          " make searches case-insensitive
+set smartcase           " ...unless pattern contains uppercase
+set incsearch           " start searching as soon as you start typing, and refine as you type more
 "" Backups:
 set backupdir=~/.vimbackups/
 set directory=~/.vimswap/
+"" Autocomplete of filenames:
+set wildmenu                    " show a menu when autocompleting filenames
+set wildmode=list:longest,full  " first complete to the longest match (like bash), then hitting tab gives you a menu of options
 
