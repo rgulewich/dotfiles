@@ -11,5 +11,6 @@ source $HOME/.profile.d/resty
 # Prompt
 export PS1="\e[0;32m\]\u@\h:\w\$ \e[0m"
 
-# Added by autojump install.sh
-source /etc/profile.d/autojump.bash
+# Use autojump if it's installed:
+[ -e /etc/profile.d/autojump.bash ] && source /etc/profile.d/autojump.bash
+
