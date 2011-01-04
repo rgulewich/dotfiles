@@ -5,7 +5,10 @@ syn on                  " syntax highlighting, please
 set nocompatible        " yay
 set visualbell          " why would anyone not have this?
 set hid                 " don't lose history when moving between buffers
+set modeline            " Allow vim: lines to specify the filetype
+set showcmd             " Show incomplete commands
 "" Indenting and tabs:
+filetype plugin indent on   " Turn on indenting
 set smartindent         " smart autoindenting
 set shiftwidth=4        " doing a '>' should move 4 spaces
 set expandtab           " expand tabs to spaces
