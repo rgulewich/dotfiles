@@ -4,9 +4,10 @@ export MANPATH="$MANPATH:/usr/local/Cellar/node/0.2.3/share/man"
 
 # Aliases
 alias ls="ls -G"
+alias jsonpp='python -mjson.tool'
 
 # Resty
-source $HOME/.profile.d/resty
+[ -e $HOME/.profile.d/resty ] && source $HOME/.profile.d/resty
 
 # Prompt
 export PS1="\e[0;32m\]\u@\h:\w\$ \e[0m"
