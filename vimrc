@@ -22,6 +22,13 @@ set sts=4               " soft tab stops are 4 spaces
 set background=dark     " how to set this depending on whether we're in the UI?
 colorscheme liquidcarbon " let's try this for a color scheme
 set ruler               " the line at the bottom
+"" Highlighting trailing spaces in red:
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 ""  Status line:
 set statusline=%F%m%r%h%w\ [%{&ff}-%Y]\ \ %l,%v\ -\ %p%%\ of\ %L\ lines
 set laststatus=2
