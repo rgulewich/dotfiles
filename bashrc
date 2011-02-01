@@ -6,6 +6,9 @@ if [[ $OS == "Darwin" ]] ; then
     export PATH="$HOME/bin:$PATH:/usr/local/Cellar/node/0.2.3/bin"
     export MANPATH="$MANPATH:/usr/local/Cellar/node/0.2.3/share/man"
     export PS1="\e[0;32m\]\u@\h:\w\$ \e[0m"
+    # For gist:
+    export GITHUB_USER="wayfaringrob"
+    [ -e "$HOME/.priv/github_token" ] && export GITHUB_TOKEN=$(cat $HOME/.priv/github_token)
 fi
 # Solaris
 if [[ $OS == "SunOS" ]] ; then
