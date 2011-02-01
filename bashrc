@@ -19,7 +19,7 @@ fi
 alias jsonpp='python -mjson.tool'
 
 # Resty
-[ -e $HOME/.profile.d/resty ] && source $HOME/.profile.d/resty
+[ -e $HOME/.profile.d/resty/resty ] && source $HOME/.profile.d/resty/resty
 
 # Use autojump if it's installed:
 [ -e /etc/profile.d/autojump.bash ] && source /etc/profile.d/autojump.bash
