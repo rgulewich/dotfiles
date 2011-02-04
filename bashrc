@@ -32,6 +32,7 @@ fi
 ## Common
 
 alias jsonpp='python -mjson.tool'
+alias less='less -R'
 
 # Resty
 [ -e $HOME/.profile.d/resty/resty ] && source $HOME/.profile.d/resty/resty
