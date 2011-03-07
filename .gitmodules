@@ -7,3 +7,6 @@
 [submodule "profile.d/resty"]
 	path = profile.d/resty
 	url = https://github.com/micha/resty.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
