@@ -1,3 +1,7 @@
+if [ -z "$PS1" ]; then
+   return
+fi
+
 OS=$(uname)
 
 ## Common
@@ -29,6 +33,7 @@ if [[ $OS == "SunOS" ]] ; then
     alias ls="ls --color"
     export TERM=xterm-color
     export PAGER=less
+    export PATH="$PATH:/opt/local/gcc34/bin"
     zone=$(zonename)
     if [ $zone == "global" ]; then
         PSCOLOR=$RED
@@ -93,4 +98,11 @@ function gup {
     fi
   )
 }
+
+# Source any local overrides
+
+for P in $HOME/.profile.d/local/* ; do
+    echo $P
+    source $P
+done
 
