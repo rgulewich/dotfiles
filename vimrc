@@ -49,3 +49,7 @@ runtime macros/matchit.vim      " required for Ruby text objs
 "" Filetypes:
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2          " 2 spaces for Ruby
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2    " 2 spaces for Javascript
+"" MacVim:
+if has("gui_macvim")
+  let macvim_hig_shift_movement = 1
+endif

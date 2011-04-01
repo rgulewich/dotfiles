@@ -19,9 +19,8 @@ BLUE="\[\033[0;34m\]"
 ## Mac
 if [[ $OS == "Darwin" ]] ; then
     alias ls="ls -G"
-    export PATH="$HOME/bin:$PATH:/usr/local/Cellar/node/0.2.3/bin"
-    export MANPATH="$MANPATH:/usr/local/Cellar/node/0.2.3/share/man"
-    export PS1="$GREEN\u@\h:\w \$\e[0m "
+    export PATH="$HOME/bin:$PATH:/usr/local/node/bin"
+    export MANPATH="$MANPATH:/usr/local/node/share/man"
     # For gist:
     export GITHUB_USER="wayfaringrob"
     [ -e "$HOME/.priv/github_token" ] && export GITHUB_TOKEN=$(cat $HOME/.priv/github_token)
@@ -30,7 +29,7 @@ fi
 
 ## Solaris
 if [[ $OS == "SunOS" ]] ; then
-    alias ls="ls --color"
+    alias ls="ls --color=auto"
     export TERM=xterm-color
     export PAGER=less
     export PATH="$PATH:/opt/local/gcc34/bin"
@@ -45,7 +44,6 @@ fi
 ## Common
 
 PS1="$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\e[0m "
-alias jsonpp='python -mjson.tool'
 alias less='less -R'
 
 # Resty
