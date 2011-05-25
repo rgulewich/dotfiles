@@ -50,6 +50,7 @@ fi
 
 PS1="$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\e[0m "
 alias less='less -R'
+alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
 # Resty
 [ -e $HOME/.profile.d/resty/resty ] && source $HOME/.profile.d/resty/resty
