@@ -27,6 +27,11 @@ if [[ $OS == "Darwin" ]] ; then
     PSCOLOR=$GREEN
 fi
 
+## Linux
+if [[ $OS == "Linux" ]] ; then
+    alias ls="ls --color"
+fi
+
 ## Solaris
 if [[ $OS == "SunOS" ]] ; then
     alias ls="ls --color=auto"
