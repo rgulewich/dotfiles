@@ -44,6 +44,7 @@ if [[ $OS == "SunOS" ]] ; then
     else
         PSCOLOR=$BLUE
     fi
+    [ -f /etc/bash/bash_completion ] && . /etc/bash/bash_completion
 fi
 
 ## Common
