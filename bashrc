@@ -103,6 +103,13 @@ function gup {
   )
 }
 
+function fssh() {
+    HOST=$(echo $1 | sed 's/[^@]*@\(.*\)/\1/')
+    echo Removing $HOST from known_hosts...
+    ssh-keygen -R $HOST
+    ssh $1
+}
+
 # Source any local overrides
 
 if [ -d "$HOME/.profile.d/local" ]; then
