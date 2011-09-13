@@ -4,6 +4,16 @@ fi
 
 OS=$(uname)
 
+## Commonly-used functions
+
+function source_it() {
+    [[ -e $1 ]] && source $1
+}
+
+function add_path() {
+    [[ -d $1 ]] && export PATH="$PATH:$1"
+}
+
 ## Common
 
 # Make the shell pick up on window size changes
@@ -14,17 +24,22 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 BLUE="\[\033[0;34m\]"
 
-[ -e $HOME/.profile.d/git-completion.bash ] && source $HOME/.profile.d/git-completion.bash
+source_it $HOME/.profile.d/git-completion.bash
 
 ## Mac
 if [[ $OS == "Darwin" ]] ; then
     alias ls="ls -G"
-    export PATH="$HOME/bin:$PATH:/usr/local/node/bin"
+    PSCOLOR=$GREEN
+    # node:
+    add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
-    # For gist:
+    # hc:
+    add_path $HOME/.hc/bin
+    export HC_DIR=$HOME/src/personal/hc
+    add_path $HC_DIR/bin
+    # gist:
     export GITHUB_USER="wayfaringrob"
     [ -e "$HOME/.priv/github_token" ] && export GITHUB_TOKEN=$(cat $HOME/.priv/github_token)
-    PSCOLOR=$GREEN
 fi
 
 ## Linux
@@ -37,27 +52,27 @@ if [[ $OS == "SunOS" ]] ; then
     alias ls="ls --color=auto"
     export TERM=xterm-color
     export PAGER=less
-    export PATH="$PATH:/opt/local/gcc34/bin"
+    add_path /opt/local/gcc34/bin
     zone=$(zonename)
     if [ $zone == "global" ]; then
         PSCOLOR=$RED
     else
         PSCOLOR=$BLUE
     fi
-    [ -f /etc/bash/bash_completion ] && . /etc/bash/bash_completion
+    source_it /etc/bash/bash_completion
 fi
 
 ## Common
 
-PS1="$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\e[0m "
+PS1="\[\e]0;\u@\h: \w\a\]$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\[\033[00m\] "
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
 # Resty
-[ -e $HOME/.profile.d/resty/resty ] && source $HOME/.profile.d/resty/resty
+source_it $HOME/.profile.d/resty/resty
 
-# Use autojump if it's installed:
-[ -e /etc/profile.d/autojump.bash ] && source /etc/profile.d/autojump.bash
+# autojump
+source_it /etc/profile.d/autojump.bash
 
 function gup {
   # subshell for `set -e` and `trap`
