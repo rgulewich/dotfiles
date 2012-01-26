@@ -6,7 +6,7 @@ call pathogen#helptags()
 set nocompatible        " yay
 set visualbell          " why would anyone not have this?
 set hid                 " don't lose history when moving between buffers
-set modeline            " Allow vim: lines to specify the filetype
+set modelines=2         " Allow vim: lines to specify the filetype (first / last 2 in the file)
 set showcmd             " Show incomplete commands
 set bs=2                " Make backspace work in Solaris zones
 set shortmess=I         " Don't show the vim welcome text when opening with no filename
