@@ -18,6 +18,8 @@ function add_path() {
 
 # Make the shell pick up on window size changes
 shopt -s checkwinsize
+# Allow partial completion of names
+shopt -s cdspell
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
@@ -30,16 +32,12 @@ source_it $HOME/.profile.d/git-completion.bash
 if [[ $OS == "Darwin" ]] ; then
     alias ls="ls -G"
     PSCOLOR=$GREEN
+    add_path $HOME/bin
     # node:
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
-    # hc:
-    add_path $HOME/.hc/bin
-    export HC_DIR=$HOME/src/personal/hc
-    add_path $HC_DIR/bin
-    # gist:
-    export GITHUB_USER="wayfaringrob"
-    [ -e "$HOME/.priv/github_token" ] && export GITHUB_TOKEN=$(cat $HOME/.priv/github_token)
+    # rvm:
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 ## Linux
@@ -53,6 +51,7 @@ if [[ $OS == "SunOS" ]] ; then
     export TERM=xterm-color
     export PAGER=less
     add_path /opt/local/gcc34/bin
+    add_path /smartdc/bin
     zone=$(zonename)
     if [ $zone == "global" ]; then
         PSCOLOR=$RED
@@ -73,6 +72,8 @@ source_it $HOME/.profile.d/resty/resty
 
 # autojump
 source_it /etc/profile.d/autojump.bash
+
+set -o vi
 
 function gup {
   # subshell for `set -e` and `trap`
@@ -119,11 +120,13 @@ function gup {
   )
 }
 
-function fssh() {
-    HOST=$(echo $1 | sed 's/[^@]*@\(.*\)/\1/')
-    echo Removing $HOST from known_hosts...
-    ssh-keygen -R $HOST
-    ssh $1
+# Prints the sha of the last git change
+gsh ()
+{
+    local sha;
+    sha=$(git show ${1-HEAD} | head -n1 | awk '{print $2}' | xargs echo -n);
+    echo -n $sha | pbcopy;
+    echo $sha
 }
 
 # Source any local overrides
@@ -134,4 +137,3 @@ if [ -d "$HOME/.profile.d/local" ]; then
         source $P
     done
 fi
-
