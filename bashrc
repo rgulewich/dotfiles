@@ -38,6 +38,7 @@ if [[ $OS == "Darwin" ]] ; then
     export MANPATH="$MANPATH:/usr/local/node/share/man"
     # rvm:
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+    alias onvim="vim -u ~/.vimrc.on  $*"
 fi
 
 ## Linux
