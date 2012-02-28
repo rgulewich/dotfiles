@@ -35,6 +35,8 @@ if [[ $OS == "Darwin" ]] ; then
     export CLICOLOR=1
     export GREP_OPTIONS='--color=auto'
     PSCOLOR=$GREEN
+    # Tell tmux we have 256 colours available
+    alias tmux="tmux -2"
     add_path $HOME/bin
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
