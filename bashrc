@@ -30,10 +30,12 @@ source_it $HOME/.profile.d/git-completion.bash
 
 ## Mac
 if [[ $OS == "Darwin" ]] ; then
-    alias ls="ls -G"
+    alias ldd='otool -L'
+    # Make things colourful:
+    export CLICOLOR=1
+    export GREP_OPTIONS='--color=auto'
     PSCOLOR=$GREEN
     add_path $HOME/bin
-    # node:
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
     # rvm:
