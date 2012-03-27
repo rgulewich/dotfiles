@@ -20,6 +20,9 @@ function add_path() {
 shopt -s checkwinsize
 # Allow partial completion of names
 shopt -s cdspell
+# Share bash history between open terminals
+shopt -s histappend
+export PROMPT_COMMAND="history -n; history -a"
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
@@ -132,6 +135,11 @@ gsh ()
     sha=$(git show ${1-HEAD} | head -n1 | awk '{print $2}' | xargs echo -n);
     echo -n $sha | pbcopy;
     echo $sha
+}
+
+# Highlight text
+function hi() {
+    perl -pe "s/$1/\e[1;31;43m$&\e[0m/g"
 }
 
 # Source any local overrides
