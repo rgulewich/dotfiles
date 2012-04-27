@@ -22,7 +22,7 @@ shopt -s checkwinsize
 shopt -s cdspell
 # Share bash history between open terminals
 shopt -s histappend
-export PROMPT_COMMAND="history -n; history -a"
+export PROMPT_COMMAND="history -a"
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
