@@ -4,9 +4,6 @@
 [submodule "vim/bundle/textobj-rubyblock"]
 	path = vim/bundle/textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "profile.d/resty"]
-	path = profile.d/resty
-	url = https://github.com/micha/resty.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git

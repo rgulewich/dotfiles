@@ -75,9 +75,6 @@ PS1="\[\033[G\]\[\e]0;\u@\h: \w\a\]$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
-# Resty
-source_it $HOME/.profile.d/resty/resty
-
 # autojump
 source_it /etc/profile.d/autojump.bash
 
