@@ -76,7 +76,7 @@ alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
 # autojump
-source_it /etc/profile.d/autojump.bash
+source_it $HOME/.autojump/bin/autojump.bash
 
 set -o vi
 
