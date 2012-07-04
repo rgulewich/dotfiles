@@ -43,6 +43,7 @@ if [[ $OS == "Darwin" ]] ; then
     add_path $HOME/bin
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
+    export EDITOR=vim
     # rvm:
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
     alias onvim="vim -u ~/.vimrc.on  $*"
