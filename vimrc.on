@@ -17,6 +17,7 @@ set backspace=indent,eol,start
 
 " Highlight search results
 set hlsearch
+set incsearch
 
 " File suffixes to ignore for editing selection (via :e).
 set suffixes=.aux,.dvi,.gz,.idx,.log,.ps,.swp,.o,.tar,.tgz,~
@@ -85,7 +86,7 @@ autocmd BufLeave *.java set fo=tcql nocindent comments&
 set textwidth=0
 autocmd BufEnter *.txt,*.eml	set textwidth=72
 autocmd BufLeave *.txt,*.eml	set textwidth=0
-autocmd BufEnter *.java,*.il,*.s,*.cc,*.c,*.h,*.f,*.js,*.sh	set textwidth=80 nu number
+autocmd BufEnter *.java,*.il,*.s,*.cc,*.c,*.h,*.f,*.js,*.sh	set textwidth=80
 autocmd BufLeave *.java,*.il,*.s,*.cc,*.c,*.h,*.f,*.js,*.sh	set textwidth=0 
 "autocmd BufEnter *.xml,*.html,Makefile*,makefile* set textwidth=0 nu
 "autocmd BufLeave *.xml,*.html,Makefile*,makefile* set textwidth=0
