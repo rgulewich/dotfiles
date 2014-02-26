@@ -80,6 +80,8 @@ alias date-for-date='echo "# Run the following on target machine to set to same 
 source_it $HOME/.autojump/bin/autojump.bash
 
 set -o vi
+set completion-ignore-case On
+
 
 function gup {
   # subshell for `set -e` and `trap`
