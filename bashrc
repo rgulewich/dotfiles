@@ -40,7 +40,6 @@ if [[ $OS == "Darwin" ]] ; then
     PSCOLOR=$GREEN
     # Tell tmux we have 256 colours available
     alias tmux="tmux -2"
-    add_path $HOME/bin
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
     export EDITOR=vim
@@ -75,6 +74,8 @@ fi
 PS1="\[\033[G\]\[\e]0;\u@\h: \w\a\]$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\[\033[00m\] "
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
+
+add_path $HOME/bin
 
 # autojump
 source_it $HOME/.autojump/bin/autojump.bash
