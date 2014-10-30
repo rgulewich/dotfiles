@@ -25,7 +25,10 @@ set sts=4               " soft tab stops are 4 spaces
 ""  Prettiness:
 set t_Co=256            " enable 256 colours
 set background=dark     " how to set this depending on whether we're in the UI?
-colorscheme dim2        " let's try this for a color scheme
+"colorscheme dim2        " let's try this for a color scheme
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1     " set transparent background
+colorscheme solarized        " let's try this for a color scheme
 set ruler               " the line at the bottom
 
 "" Highlighting trailing spaces in red:
