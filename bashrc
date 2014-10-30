@@ -59,7 +59,7 @@ if [[ $OS == "SunOS" ]] ; then
     export TERM=xterm-color
     export PAGER=less
     add_path /opt/local/gcc34/bin
-    add_path /smartdc/bin
+    add_path /opt/local/bin
     zone=$(zonename)
     if [ $zone == "global" ]; then
         PSCOLOR=$RED
