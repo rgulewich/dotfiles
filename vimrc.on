@@ -5,6 +5,13 @@
 "
 " Hacked up slightly by eschrock,
 " and more by dap and more by rm
+" (now completely mutated by robg)
+
+"" Turn on pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+set nocompatible
 
 " Enable backspace to do everything
 set backspace=indent,eol,start
@@ -107,7 +114,10 @@ augroup Binary
 augroup END
 
 " Make sure we use the right colorscheme
-colorscheme elflord
+" colorscheme elflord
+"let g:solarized_termcolors=16
+let g:solarized_termtrans=1     " set transparent background
+colorscheme solarized        " let's try this for a color scheme
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" CSCOPE settings for vim
