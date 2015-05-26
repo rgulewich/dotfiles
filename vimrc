@@ -59,7 +59,6 @@ set wildmenu                    " show a menu when autocompleting filenames
 set wildmode=list:longest,full  " first complete to the longest match (like bash), then hitting tab gives you a menu of options
 
 "" Plugins:
-runtime macros/matchit.vim      " required for Ruby text objs
 
 "" Filetypes:
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2          " 2 spaces for Ruby
