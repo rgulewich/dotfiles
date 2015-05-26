@@ -24,11 +24,6 @@ shopt -s cdspell
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
 
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-BLUE="\[\033[0;34m\]"
-
 source_it $HOME/.profile.d/git-completion.bash
 
 ## Mac
@@ -37,7 +32,6 @@ if [[ $OS == "Darwin" ]] ; then
     # Make things colourful:
     export CLICOLOR=1
     export GREP_OPTIONS='--color=auto'
-    PSCOLOR=$GREEN
     # Tell tmux we have 256 colours available
     alias tmux="tmux -2"
     add_path /usr/local/node/bin
@@ -61,17 +55,12 @@ if [[ $OS == "SunOS" ]] ; then
     add_path /opt/local/gcc34/bin
     add_path /opt/local/bin
     zone=$(zonename)
-    if [ $zone == "global" ]; then
-        PSCOLOR=$RED
-    else
-        PSCOLOR=$BLUE
-    fi
     source_it /etc/bash/bash_completion
 fi
 
 ## Common
 
-PS1="\[\033[G\]\[\e]0;\u@\h: \w\a\]$PSCOLOR\u@\h:\w$YELLOW"'$(__git_ps1 " (%s)")'" $PSCOLOR\$\[\033[00m\] "
+PS1=$'\\[\E[1m\E[38;5;25m\\]\\u@\\h\\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]:\\[\E[m\017\\]\\[\E[1m\E[38;5;22m\\]\\w\\[\E[m\017\\]\\[\E[1m\E[38;5;172m\\]$(__git_ps1 " (%s)") \\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]$\\[\E[m\017\\] '
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
