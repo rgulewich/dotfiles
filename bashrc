@@ -37,12 +37,18 @@ if [[ $OS == "Darwin" ]] ; then
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
     export EDITOR=vim
+
     # rvm:
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+    # nvm:
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+    # golang:
+    export GOPATH=$HOME/src/go
+    add_path $HOME/src/go/bin
 fi
 
 ## Linux
