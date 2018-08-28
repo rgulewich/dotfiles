@@ -1,10 +1,10 @@
 #!/bin/bash
 
-git submodule init
-git submodule update
+#git submodule init
+#git submodule update
 
-DIR=`pwd`
-FILES="autojump bashrc profile profile.d screenrc tmux.conf vim vimrc vimrc.on"
+DIR=$(cd $(dirname $0)/..; pwd)
+FILES="bashrc profile profile.d screenrc tmux.conf vim vimrc"
 
 for srcfile in $FILES; do
   if [ ! -e "$srcfile" ]; then
