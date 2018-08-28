@@ -1,6 +1,11 @@
-"" Turn on pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"" vim-plug setup
+call plug#begin()
+
+"Plug 'ericbn/vim-solarized'
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
+
 
 "" Misc:
 set nocompatible        " yay
