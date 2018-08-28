@@ -39,23 +39,15 @@ if [[ $OS == "Darwin" ]] ; then
     export EDITOR=vim
     # rvm:
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-    alias onvim="vim -u ~/.vimrc.on  $*"
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 ## Linux
 if [[ $OS == "Linux" ]] ; then
     alias ls="ls --color"
-fi
-
-## Solaris
-if [[ $OS == "SunOS" ]] ; then
-    alias ls="ls --color=auto"
-    export TERM=xterm-color
-    export PAGER=less
-    add_path /opt/local/gcc34/bin
-    add_path /opt/local/bin
-    zone=$(zonename)
-    source_it /etc/bash/bash_completion
 fi
 
 ## Common
@@ -67,7 +59,7 @@ alias date-for-date='echo "# Run the following on target machine to set to same 
 add_path $HOME/bin
 
 # autojump
-source_it $HOME/.autojump/bin/autojump.bash
+source_it /usr/local/etc/profile.d/autojump.sh
 
 set -o vi
 set completion-ignore-case On
