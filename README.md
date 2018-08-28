@@ -1,4 +1,3 @@
 # Dotfiles
 
-These are, uh, my dotfiles.
-
+My dotfiles.
