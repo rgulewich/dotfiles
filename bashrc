@@ -134,7 +134,7 @@ function hi() {
 
 if [ -d "$HOME/.profile.d/local" ]; then
     for P in $HOME/.profile.d/local/* ; do
-        echo $P
+        # echo $P
         source $P
     done
 fi
