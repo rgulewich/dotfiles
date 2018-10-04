@@ -26,9 +26,13 @@ export PROMPT_COMMAND="history -a"
 
 source_it $HOME/.profile.d/git-completion.bash
 
+# blue:
+host_colour=25
+
 ## Mac
 if [[ $OS == "Darwin" ]] ; then
     alias ldd='otool -L'
+    alias t='todo.sh'
     # Make things colourful:
     export CLICOLOR=1
     export GREP_OPTIONS='--color=auto'
@@ -46,26 +50,33 @@ if [[ $OS == "Darwin" ]] ; then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-    # golang:
-    export GOPATH=$HOME/src/go
-    add_path $HOME/src/go/bin
+    # autojump
+    source_it /usr/local/etc/profile.d/autojump.sh
 fi
 
 ## Linux
 if [[ $OS == "Linux" ]] ; then
-    alias ls="ls --color"
+    alias ls="ls --color=auto"
+
+    # autojump
+    source_it /usr/share/autojump/autojump.bash
+    # system golang:
+    add_path /usr/local/go/bin
+    # purple
+    host_colour=97
 fi
 
 ## Common
 
-PS1=$'\\[\E[1m\E[38;5;25m\\]\\u@\\h\\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]:\\[\E[m\017\\]\\[\E[1m\E[38;5;22m\\]\\w\\[\E[m\017\\]\\[\E[1m\E[38;5;172m\\]$(__git_ps1 " (%s)") \\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]$\\[\E[m\017\\] '
+PS1=$'\\[\E[1m\E[38;5;${host_colour}m\\]\\u@\\h\\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]:\\[\E[m\017\\]\\[\E[1m\E[38;5;22m\\]\\w\\[\E[m\017\\]\\[\E[1m\E[38;5;172m\\]$(__git_ps1 " (%s)") \\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]$\\[\E[m\017\\] '
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 
 add_path $HOME/bin
 
-# autojump
-source_it /usr/local/etc/profile.d/autojump.sh
+# golang:
+export GOPATH=$HOME/src/go
+add_path $HOME/src/go/bin
 
 set -o vi
 set completion-ignore-case On
