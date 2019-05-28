@@ -31,16 +31,20 @@ host_colour=25
 
 ## Mac
 if [[ $OS == "Darwin" ]] ; then
-    alias ldd='otool -L'
-    alias t='todo.sh'
+    export EDITOR=vim
     # Make things colourful:
     export CLICOLOR=1
     export GREP_OPTIONS='--color=auto'
-    # Tell tmux we have 256 colours available
-    alias tmux="tmux -2"
+
+    # node
     add_path /usr/local/node/bin
     export MANPATH="$MANPATH:/usr/local/node/share/man"
-    export EDITOR=vim
+
+    # Aliases:
+    alias ldd='otool -L'
+    alias t='todo.sh'
+    # Tell tmux we have 256 colours available
+    alias tmux="tmux -2"
 
     # rvm:
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -52,6 +56,9 @@ if [[ $OS == "Darwin" ]] ; then
 
     # autojump
     source_it /usr/local/etc/profile.d/autojump.sh
+    # virtualenv
+    #add_path $HOME/Library/Python/2.7/bin
+    add_path $HOME/Library/Python/3.7/bin
 fi
 
 ## Linux
