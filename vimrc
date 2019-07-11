@@ -3,6 +3,7 @@ call plug#begin()
 
 "Plug 'ericbn/vim-solarized'
 Plug 'altercation/vim-colors-solarized'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
