@@ -77,6 +77,7 @@ add_path $HOME/bin
 
 # golang:
 export GOPATH=$HOME/src/go
+export GO111MODULE=on
 add_path $HOME/src/go/bin
 
 # node / nvm:
