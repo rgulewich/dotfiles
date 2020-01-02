@@ -1,0 +1,8 @@
+#compdef _snip snip
+
+function _snip()
+{
+	local -a snips
+	snips=("${(@f)$(snip --list)}")
+	_describe 'snips' snips
+}

@@ -1,0 +1,8 @@
+#compdef _o o
+
+function _o()
+{
+	local -a urls
+	urls=("${(@f)$(o --list)}")
+	_describe 'urls' urls
+}

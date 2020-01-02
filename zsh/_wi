@@ -1,0 +1,8 @@
+#compdef _wi wi
+
+function _wi()
+{
+	local -a topics
+	topics=("${(@f)$(wi --cmds)}")
+	_describe 'topics' topics
+}
