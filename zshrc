@@ -33,9 +33,6 @@ setopt HIST_REDUCE_BLANKS
 bindkey '^R' history-incremental-search-backward
 
 
-autoload -Uz compinit && compinit
-
-
 ## Common
 
 source $HOME/.profile.d/common/common.sh
@@ -48,3 +45,18 @@ setopt prompt_subst
 autoload -Uz promptinit && promptinit
 
 PROMPT='%F{$host_colour}%n@%M%f%F{237}:%f%F{22}%~%f%F{172}$(__git_ps1 " (%s)")%f %F{237}$%f '
+
+
+## Source any local overrides
+
+if [[ -d "$HOME/.profile.d/local" ]]; then
+    for P in $HOME/.profile.d/local/* ; do
+        # echo $P
+        source $P
+    done
+fi
+
+
+## Stuff that needs to go last
+
+autoload -Uz compinit && compinit
