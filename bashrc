@@ -27,6 +27,7 @@ source $HOME/.profile.d/common/common.sh
 
 ## Prompt
 
+source_it $HOME/.profile.d/git-prompt.sh
 PS1=$'\\[\E[1m\E[38;5;${host_colour}m\\]\\u@\\h\\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]:\\[\E[m\017\\]\\[\E[1m\E[38;5;22m\\]\\w\\[\E[m\017\\]\\[\E[1m\E[38;5;172m\\]$(__git_ps1 " (%s)") \\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]$\\[\E[m\017\\] '
 
 

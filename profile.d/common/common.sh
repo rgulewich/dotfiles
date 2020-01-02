@@ -3,7 +3,9 @@
 # blue:
 host_colour=25
 
+
 ## Mac
+
 if [[ $OS == "Darwin" ]] ; then
     export EDITOR=vim
     # Make things colourful:
@@ -26,25 +28,33 @@ if [[ $OS == "Darwin" ]] ; then
     add_path $HOME/Library/Python/3.7/bin
 fi
 
+
 ## Linux
+
 if [[ $OS == "Linux" ]] ; then
     alias ls="ls --color=auto"
     # Solarized doesn't play nicely with the colours that Linux picks:
     export LS_COLORS="di=00;34:ln=00;35:so=00;32:pi=01;33:ex=00;31:bd=00;34"
 
     # autojump
-    source_it /usr/share/autojump/autojump.bash
+    if [[ -n ${ZSH_NAME:-} ]]; then
+        source_it /usr/share/autojump/autojump.zsh
+    else
+        source_it /usr/share/autojump/autojump.bash
+    fi
     # system golang:
     add_path /usr/local/go/bin
     # purple
     host_colour=97
 fi
 
+
 ## Aliases
 
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
 alias rgv='rg --iglob "!vendor"'
+
 
 ## Paths
 
@@ -66,4 +76,3 @@ add_path /usr/local/node/bin
 
 # man
 export MANPATH="$MANPATH:/usr/local/node/share/man"
-
