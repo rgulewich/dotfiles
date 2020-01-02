@@ -60,19 +60,16 @@ alias rgv='rg --iglob "!vendor"'
 
 add_path $HOME/bin
 
-# yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # golang
 export GOPATH=$HOME/src/go
 export GO111MODULE=on
 add_path $HOME/src/go/bin
 
-# node / nvm
+# node / nvm / yarn
+add_path /usr/local/node/bin
 export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
-add_path /usr/local/node/bin
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # man
 export MANPATH="$MANPATH:/usr/local/node/share/man"
