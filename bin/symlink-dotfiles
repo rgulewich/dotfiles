@@ -4,31 +4,31 @@
 #git submodule update
 
 DIR=$(cd $(dirname $0)/..; pwd)
-FILES="bashrc profile profile.d screenrc tmux.conf vim vimrc"
+FILES="bashrc profile profile.d screenrc tmux.conf vim vimrc zshrc"
 
 for srcfile in $FILES; do
-  if [ ! -e "$srcfile" ]; then
-    echo "File '${src}' does not exist!"
-    exit 1
-  fi
-  dst="$HOME/.${srcfile}"
-  src="$DIR/${srcfile}"
+    if [[ ! -e "$srcfile" ]]; then
+        echo "File '${src}' does not exist!"
+        exit 1
+    fi
+    dst="$HOME/.${srcfile}"
+    src="$DIR/${srcfile}"
 
-  link=$(readlink ${dst})
-  if [ -n "${link}" ]; then
-    echo "'${dst}' is already a symlink.  Skipping..."
-    continue
-  fi
-  if [ -e $dst ]; then
-    echo "Backing up '${dst}' to '${dst}.orig'..."
-    mv $dst $dst.orig
-  fi
-  echo "Linking '${dst}' to '${src}'..."
-  ln -s $src $dst
+    link=$(readlink ${dst})
+    if [[ -n "${link}" ]]; then
+        echo "'${dst}' is already a symlink.  Skipping..."
+        continue
+    fi
+    if [[ -e $dst ]]; then
+        echo "Backing up '${dst}' to '${dst}.orig'..."
+        mv $dst $dst.orig
+    fi
+    echo "Linking '${dst}' to '${src}'..."
+    ln -s $src $dst
 done
 
 echo Creating .vimswap and .vimbackups directories...
-[ ! -d "$HOME/.vimswap" ] && mkdir "$HOME/.vimswap"
-[ ! -d "$HOME/.vimbackups" ] && mkdir "$HOME/.vimbackups"
+[[ ! -d "$HOME/.vimswap" ]] && mkdir "$HOME/.vimswap"
+[[ ! -d "$HOME/.vimbackups" ]] && mkdir "$HOME/.vimbackups"
 
 echo Done.
