@@ -1,0 +1,40 @@
+[options]
+  colorscheme = "NeoSolarized"
+  colorscheme_bg = "dark"
+  # needed for NeoSolarized to work - see https://github.com/overcache/NeoSolarized
+  enable_guicolors = true
+  enable_tabline_filetype_icon = true
+  default_indent = 4
+  expand_tab = true
+
+[[layers]]
+  name = "autocomplete"
+  auto-completion-return-key-behavior = "complete"
+  auto-completion-tab-key-behavior = "cycle"
+
+[[layers]]
+  name = "colorscheme"
+
+[[layers]]
+  name = "denite"
+
+[[layers]]
+  name = "edit"
+
+[[layers]]
+  name = "incsearch"
+
+[[layers]]
+  name = "lang#extra"
+
+[[layers]]
+  name = "lang#go"
+
+[[layers]]
+  name = "lang#markdown"
+
+[[layers]]
+  name = "lang#nix"
+
+[[layers]]
+  name = "lang#rust"
