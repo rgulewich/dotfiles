@@ -32,6 +32,13 @@ setopt HIST_REDUCE_BLANKS
 # Enable reverse history search with Ctrl-R
 bindkey '^R' history-incremental-search-backward
 
+# nix's autojump
+source_it /run/current-system/sw/share/zsh/site-functions/autojump.zsh
+
+if command -v direnv >/dev/null ; then
+    eval "$(direnv hook zsh)"
+fi
+
 
 ## Common
 

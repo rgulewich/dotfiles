@@ -18,6 +18,8 @@ export PROMPT_COMMAND="history -a"
 
 set completion-ignore-case On
 source_it $HOME/.profile.d/git-completion.bash
+# nix's autojump
+source_it /run/current-system/sw/share/bash-completion/completions/autojump.bash
 
 
 ## Common
