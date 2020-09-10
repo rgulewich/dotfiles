@@ -53,7 +53,6 @@ fi
 
 alias less='less -R'
 alias date-for-date='echo "# Run the following on target machine to set to same date as here." && echo -n "date " && date -u "+%m%d%H%M%Y.%S"'
-alias rgv='rg --iglob "!vendor"'
 
 
 ## Paths
@@ -73,3 +72,15 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # man
 export MANPATH="$MANPATH:/usr/local/node/share/man"
+
+
+## Functions
+
+
+function rgv() {
+    if [[ -e ./.ripgreprc ]]; then
+        RIPGREP_CONFIG_PATH=./.ripgreprc rg --iglob "!vendor" $*
+    else
+        rg --iglob "!vendor" $*
+    fi
+}
