@@ -16,7 +16,7 @@ HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
 # share history across multiple zsh sessions
-setopt SHARE_HISTORY
+#setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 # adds commands as they are typed, not at shell exit
 setopt INC_APPEND_HISTORY
