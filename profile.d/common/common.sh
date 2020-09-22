@@ -1,4 +1,4 @@
-## Shared functions between bash and zsh
+## Shared setup between bash and zsh
 
 # blue:
 host_colour=25
@@ -36,7 +36,6 @@ if [[ $OS == "Linux" ]] ; then
     # Solarized doesn't play nicely with the colours that Linux picks:
     export LS_COLORS="di=00;34:ln=00;35:so=00;32:pi=01;33:ex=00;31:bd=00;34"
 
-    # autojump
     if [[ -n ${ZSH_NAME:-} ]]; then
         source_it /usr/share/autojump/autojump.zsh
     else
@@ -46,6 +45,13 @@ if [[ $OS == "Linux" ]] ; then
     add_path /usr/local/go/bin
     # purple
     host_colour=97
+fi
+
+
+## Programs
+
+if exe_installed "direnv"; then
+    eval "$(direnv hook zsh)"
 fi
 
 
