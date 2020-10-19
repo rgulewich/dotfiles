@@ -17,3 +17,11 @@ function exe_installed() {
 
     return 1
 }
+
+function is_zsh() {
+    if [[ -n ${ZSH_NAME:-} ]]; then
+        return 0
+    fi
+
+    return 1
+}

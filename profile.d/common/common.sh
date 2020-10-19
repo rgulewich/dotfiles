@@ -36,7 +36,7 @@ if [[ $OS == "Linux" ]] ; then
     # Solarized doesn't play nicely with the colours that Linux picks:
     export LS_COLORS="di=00;34:ln=00;35:so=00;32:pi=01;33:ex=00;31:bd=00;34"
 
-    if [[ -n ${ZSH_NAME:-} ]]; then
+    if is_zsh; then
         source_it /usr/share/autojump/autojump.zsh
     else
         source_it /usr/share/autojump/autojump.bash
