@@ -26,6 +26,9 @@ if [[ $OS == "Darwin" ]] ; then
     # virtualenv
     #add_path $HOME/Library/Python/2.7/bin
     add_path $HOME/Library/Python/3.7/bin
+
+    # make sure per-user vim from nix takes precedence
+    prepend_path $HOME/.nix-profile/bin
 fi
 
 
@@ -67,7 +70,7 @@ add_path $HOME/bin
 
 # golang
 export GOPATH=$HOME/src/go
-export GO111MODULE=on
+export GO111MODULE=auto
 add_path $HOME/src/go/bin
 
 # node / nvm / yarn

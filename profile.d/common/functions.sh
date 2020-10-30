@@ -25,3 +25,7 @@ function is_zsh() {
 
     return 1
 }
+
+function prepend_path() {
+    [[ -d $1 ]] && export PATH="$1:$PATH"
+}
