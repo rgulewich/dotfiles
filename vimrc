@@ -1,11 +1,11 @@
 "" vim-plug setup
-call plug#begin()
+"call plug#begin()
 
 "Plug 'ericbn/vim-solarized'
-Plug 'altercation/vim-colors-solarized'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-call plug#end()
+"call plug#end()
 
 
 "" Misc:
@@ -31,7 +31,6 @@ set sts=4               " soft tab stops are 4 spaces
 ""  Prettiness:
 set t_Co=256            " enable 256 colours
 set background=dark     " how to set this depending on whether we're in the UI?
-"colorscheme dim2        " let's try this for a color scheme
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1     " set transparent background
 colorscheme solarized        " let's try this for a color scheme
