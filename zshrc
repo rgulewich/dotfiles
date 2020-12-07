@@ -51,7 +51,7 @@ source $HOME/.profile.d/git-prompt.sh
 setopt prompt_subst
 autoload -Uz promptinit && promptinit
 
-PROMPT='%F{$host_colour}%n@%M%f%F{237}:%f%F{22}%~%f%F{172}$(__git_ps1 " (%s)")%f %F{237}$%f '
+PROMPT='%F{$date_colour}%D{%y-%m-%f} %D{%r}|%F{$host_colour}%n@%M%f%F{237}:%f%F{22}%~%f%F{172}$(__git_ps1 " (%s)")%f %F{237}$%f '
 
 
 ## Source any local overrides

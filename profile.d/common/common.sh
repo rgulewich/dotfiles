@@ -2,6 +2,8 @@
 
 # blue:
 host_colour=25
+# dark green:
+date_colour=23
 
 
 ## Mac
