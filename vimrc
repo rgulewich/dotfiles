@@ -1,12 +1,10 @@
 "" vim-plug setup
-"call plug#begin()
-
-"Plug 'ericbn/vim-solarized'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-"call plug#end()
-
+if filereadable(expand('~/.vim/autoload/plug.vim'))
+    call plug#begin()
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    call plug#end()
+endif
 
 "" Misc:
 set nocompatible        " yay
