@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # https://github.com/NixOS/nixpkgs/issues/84803#issuecomment-612579894
-TMPDIR=/tmp darwin-rebuild switch
+TMPDIR=/tmp darwin-rebuild switch --show-trace
