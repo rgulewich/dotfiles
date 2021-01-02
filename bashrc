@@ -17,7 +17,7 @@ set -o vi
 export PROMPT_COMMAND="history -a"
 
 set completion-ignore-case On
-source_it $HOME/.profile.d/git-completion.bash
+source_it $HOME/.profile.d/git/git-completion.bash
 # nix's autojump
 source_it /run/current-system/sw/share/bash-completion/completions/autojump.bash
 
@@ -29,7 +29,7 @@ source $HOME/.profile.d/common/common.sh
 
 ## Prompt
 
-source_it $HOME/.profile.d/git-prompt.sh
+source_it $HOME/.profile.d/git/git-prompt.sh
 PS1=$'\\[\E[1m\E[38;5;${host_colour}m\\]\\u@\\h\\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]:\\[\E[m\017\\]\\[\E[1m\E[38;5;22m\\]\\w\\[\E[m\017\\]\\[\E[1m\E[38;5;172m\\]$(__git_ps1 " (%s)") \\[\E[m\017\\]\\[\E[1m\E[38;5;237m\\]$\\[\E[m\017\\] '
 
 

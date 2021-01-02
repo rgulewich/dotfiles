@@ -27,6 +27,7 @@
       pkgs.lorri
       pkgs.nnn
       pkgs.neovim
+      pkgs.nodejs-14_x
       pkgs.niv
       pkgs.ripgrep
       pkgs.rustc

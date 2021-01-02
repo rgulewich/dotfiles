@@ -47,7 +47,7 @@ source $HOME/.profile.d/common/common.sh
 
 ## Prompt
 
-source $HOME/.profile.d/git-prompt.sh
+source $HOME/.profile.d/git/git-prompt.sh
 setopt prompt_subst
 autoload -Uz promptinit && promptinit
 
