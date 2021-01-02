@@ -7,6 +7,8 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = false;
+  nixpkgs.config.allowUnsupportedSystem = false;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -40,15 +42,15 @@
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
-  # services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  services.nix-daemon.enable = true;
+  nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.bash.enable = true;
   programs.zsh.enable = true;
 
   # Let Home Manager install and manage itself.
-  #programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
   #programs.tmux.enable = true;
 
   users.users."rob" = {
