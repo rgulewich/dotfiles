@@ -50,7 +50,7 @@
   programs.zsh.enable = true;
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  #programs.home-manager.enable = true;
   #programs.tmux.enable = true;
 
   users.users."rob" = {
