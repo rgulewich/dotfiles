@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
-{
+let
+  current_user = builtins.getEnv "USER";
+  home_dir = builtins.getEnv "HOME";
+
+in
+rec {
   imports = [
     <home-manager/nix-darwin>
     ./osx-settings.nix
@@ -53,12 +58,12 @@
   #programs.home-manager.enable = true;
   #programs.tmux.enable = true;
 
-  users.users."rob" = {
+  users.users."${current_user}" = {
     name = "Rob Gulewich";
-    home = "/Users/rob";
+    home = "${home_dir}";
   };
 
-  home-manager.users."rob" = import ./home.nix;
+  home-manager.users."${current_user}" = import ./home.nix;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
