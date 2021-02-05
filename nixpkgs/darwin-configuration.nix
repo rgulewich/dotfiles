@@ -36,6 +36,8 @@ rec {
       pkgs.neovim
       pkgs.nodejs-14_x
       pkgs.niv
+      pkgs.python37
+      pkgs.python37Packages.pip
       pkgs.ripgrep
       pkgs.rustc
       pkgs.tmux
