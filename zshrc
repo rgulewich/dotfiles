@@ -15,8 +15,9 @@ fpath=(~/.zsh $fpath)
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
-# share history across multiple zsh sessions
-#setopt SHARE_HISTORY
+# don't share history across multiple zsh sessions
+setopt no_share_history
+unsetopt share_history
 setopt APPEND_HISTORY
 # adds commands as they are typed, not at shell exit
 setopt INC_APPEND_HISTORY
