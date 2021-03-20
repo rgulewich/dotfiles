@@ -1,4 +1,10 @@
 #!/bin/bash
 
+# NIX_PATH=darwin-config=/Users/$HOME/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:/Users/$HOME/.nix-defexpr/channels
 # https://github.com/NixOS/nixpkgs/issues/84803#issuecomment-612579894
+
+# Work around https://github.com/LnL7/nix-darwin/pull/286 / https://github.com/LnL7/nix-darwin/issues/158
+nix_darwin_file_to_source=$(grep set-environment /etc/zshenv | awk '{ print $NF }')
+
+. $nix_darwin_file_to_source
 TMPDIR=/tmp darwin-rebuild switch --show-trace
