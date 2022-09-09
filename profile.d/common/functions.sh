@@ -29,3 +29,8 @@ function is_zsh() {
 function prepend_path() {
     [[ -d $1 ]] && export PATH="$1:$PATH"
 }
+
+# There's no realpath cli tool in macos (which is available in coreutils Linux)
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
