@@ -31,6 +31,7 @@ if [[ $OS == "Darwin" ]] ; then
 
     # make sure per-user vim from nix takes precedence
     prepend_path $HOME/.nix-profile/bin
+    export NIX_PATH=$HOME/.nix-defexpr/channels
 fi
 
 

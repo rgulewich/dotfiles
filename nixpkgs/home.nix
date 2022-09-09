@@ -12,4 +12,6 @@ rec {
     ./vim.nix
     ./zsh.nix
   ] ++ local_imports;
+
+  home.stateVersion = "22.05";
 }
