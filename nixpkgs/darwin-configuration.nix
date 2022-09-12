@@ -29,6 +29,7 @@ rec {
       pkgs.go
       pkgs.home-manager
       pkgs.inconsolata
+      pkgs.jd-diff-patch
       pkgs.jrnl
       pkgs.jq
       pkgs.lorri
