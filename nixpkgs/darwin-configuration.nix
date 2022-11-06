@@ -33,6 +33,7 @@ rec {
       pkgs.jq
       pkgs.lorri
       pkgs.nnn
+      pkgs.nmap
       pkgs.neovim
       pkgs.nodejs-14_x
       pkgs.niv
