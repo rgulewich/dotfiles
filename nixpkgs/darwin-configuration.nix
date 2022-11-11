@@ -33,6 +33,7 @@ rec {
       pkgs.jrnl
       pkgs.jq
       pkgs.lorri
+      pkgs.moreutils
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
