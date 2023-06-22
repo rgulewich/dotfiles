@@ -19,7 +19,7 @@ rec {
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
-      pkgs.alacritty
+      #pkgs.alacritty
       pkgs.autojump
       pkgs.broot
       pkgs.cargo
@@ -37,7 +37,7 @@ rec {
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
-      pkgs.nodejs-14_x
+      pkgs.nodejs-16_x
       pkgs.niv
       pkgs.python37
       pkgs.python37Packages.pip
