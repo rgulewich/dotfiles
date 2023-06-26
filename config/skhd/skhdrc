@@ -1,0 +1,21 @@
+# Docs:
+# https://github.com/koekeishiya/skhd
+# Leader key: https://github.com/koekeishiya/skhd/issues/49
+# Example rc file: https://github.com/koekeishiya/skhd/blob/master/examples/skhdrc
+# Keywords: https://github.com/koekeishiya/skhd/issues/1
+
+# defines a new mode "leader" that captures keypresses
+:: leader @
+# toggle mode "leader" using f19
+f19 ; leader
+# leave "leader" mode when f19 is pressed again or esc is pressed
+leader < f19 ; default
+leader < 0x35 ; default
+
+# execute command in mode "leader", then leave mode by simulating f19 keypress
+leader < b : open /Applications/Google\ Chrome.app ; skhd -k "f19"
+leader < c : open /Applications/Visual\ Studio\ Code.app ; skhd -k "f19"
+leader < m : open /Applications/Spotify.app ; skhd -k "f19"
+leader < n : open /Applications/Obsidian.app ; skhd -k "f19"
+leader < s : open /Applications/Slack.app ; skhd -k "f19"
+leader < t : open /Applications/Alacritty.app ; skhd -k "f19"
