@@ -26,7 +26,7 @@ rec {
       pkgs.direnv
       pkgs.fira-code
       pkgs.fzf
-      pkgs.go
+      pkgs.go_1_21
       pkgs.home-manager
       pkgs.inconsolata
       pkgs.jd-diff-patch
@@ -37,12 +37,13 @@ rec {
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
-      pkgs.nodejs-16_x
+      pkgs.nodejs-18_x
       pkgs.niv
-      pkgs.python37
-      pkgs.python37Packages.pip
+      pkgs.python312
+      pkgs.python312Packages.pip
       pkgs.ripgrep
       pkgs.rustc
+      pkgs.skhd
       pkgs.tmux
       pkgs.vim
     ];
@@ -64,7 +65,7 @@ rec {
   #programs.tmux.enable = true;
 
   users.users."${current_user}" = {
-    name = "Rob Gulewich";
+    name = "rob";
     home = "${home_dir}";
   };
 
