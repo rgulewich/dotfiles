@@ -4,7 +4,8 @@
 #git submodule update
 
 DIR=$(cd $(dirname $0)/..; pwd)
-FILES="bashrc profile profile.d screenrc tmux.conf vim vimrc zsh zshrc"
+#FILES="bashrc profile profile.d screenrc tmux.conf vim vimrc zsh zshrc"
+FILES="nixpkgs"
 
 for srcfile in $FILES; do
     if [[ ! -e "$srcfile" ]]; then
