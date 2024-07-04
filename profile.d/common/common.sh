@@ -28,6 +28,8 @@ if [[ $OS == "Darwin" ]] ; then
     # virtualenv
     #add_path $HOME/Library/Python/2.7/bin
     add_path $HOME/Library/Python/3.7/bin
+    # brew
+    add_path /opt/homebrew/bin
 
     # make sure per-user vim from nix takes precedence
     prepend_path $HOME/.nix-profile/bin
