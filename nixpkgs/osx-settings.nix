@@ -38,9 +38,16 @@ in
       NewWindowTargetPath = "file://${home_dir}";
     };
 
+    # Disable handoff
+    # https://superuser.com/questions/1420107/how-can-i-toggle-handoff-continuity-in-terminal-on-macos
+    "com.apple.coreservices.useractivityd" = {
+      ActivityAdvertisingAllowed = false;
+      ActivityReceivingAllowed = false;
+    };
+
     NSGlobalDomain = {
-      # https://tisgoud.nl/2020/10/silence-is-foo/
       # Disable interface sounds
+      # https://tisgoud.nl/2020/10/silence-is-foo/
       "com.apple.sound.uiaudio".enabled = false;
       # Disable press-and-hold for keys in favor of key repeat.
       ApplePressAndHoldEnabled = true;
