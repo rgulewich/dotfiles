@@ -50,8 +50,12 @@ in
       # https://tisgoud.nl/2020/10/silence-is-foo/
       "com.apple.sound.uiaudio".enabled = false;
       # Disable press-and-hold for keys in favor of key repeat.
-      ApplePressAndHoldEnabled = true;
+      ApplePressAndHoldEnabled = false;
     };
+
+    # Per-app press and hold disabling
+    "com.microsoft.VSCode".ApplePressAndHoldEnabled = false;
+    "md.obsidian".ApplePressAndHoldEnabled = false;
   };
 
   # https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
