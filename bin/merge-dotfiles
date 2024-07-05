@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DIR=$(cd $(dirname $0)/..; pwd)
+
+# VSCode
+
+vscode_orig="$HOME/Library/Application Support/Code/User/settings.json"
+vscode_backup="$HOME/Library/Application Support/Code/User/settings.json.bak"
+vscode_merged="$HOME/Library/Application Support/Code/User/settings.json.merged"
+
+if [[ ! -e $vscode_backup ]]; then
+    cp "$vscode_orig" "$vscode_backup"
+fi
+jq -s 'add' "$vscode_orig" $DIR/vscode/settings.json > "$vscode_merged"
+mv "$vscode_merged" "$vscode_orig"
