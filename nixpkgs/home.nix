@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   home_dir = builtins.getEnv "HOME";
@@ -12,6 +12,9 @@ rec {
     ./vim.nix
     ./zsh.nix
   ] ++ local_imports;
+
+  # Other dotfiles
+  home.file.".config/skhd/skhdrc".source = "${config.home.homeDirectory}/src/me/dotfiles/config/skhd/skhdrc";
 
   home.stateVersion = "22.05";
 }
