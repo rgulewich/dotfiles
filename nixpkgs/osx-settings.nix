@@ -11,6 +11,11 @@ in
   };
   system.defaults.trackpad.Clicking = true;
 
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
+
   system.defaults.NSGlobalDomain = {
     # Make a sound when system volume changes
     "com.apple.sound.beep.feedback" = 1;
