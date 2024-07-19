@@ -41,6 +41,7 @@ rec {
       pkgs.niv
       pkgs.python312
       pkgs.python312Packages.pip
+      pkgs.reattach-to-user-namespace
       pkgs.ripgrep
       pkgs.rustc
       pkgs.skhd
