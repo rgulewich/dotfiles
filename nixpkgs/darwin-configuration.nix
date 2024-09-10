@@ -29,6 +29,7 @@ rec {
       pkgs.go_1_21
       pkgs.home-manager
       pkgs.inconsolata
+      pkgs.imagemagick7
       pkgs.jd-diff-patch
       pkgs.jrnl
       pkgs.jq
@@ -47,6 +48,7 @@ rec {
       pkgs.skhd
       pkgs.tmux
       pkgs.vim
+      pkgs.yq
     ];
 
   # Use a custom configuration.nix location.
