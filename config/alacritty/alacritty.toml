@@ -1,3 +1,4 @@
+[general]
 live_config_reload = true
 
 [bell]
@@ -694,18 +695,11 @@ args = ["-nb", "io.alacritty"]
 program = "open"
 
 [mouse]
-faux_scrollng_lines = 0
 hide_when_typing = true
 
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
 
 [scrolling]
 history = 0
@@ -714,7 +708,9 @@ multiplier = 0
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
+[terminal]
+
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 
