@@ -10,7 +10,7 @@
     enable = true;
     extraConfig = builtins.readFile "${config.home.homeDirectory}/src/me/dotfiles/vimrc";
     plugins = with pkgs.vimPlugins; [
-      spacevim
+      #spacevim
       vim-colors-solarized
       vim-go
     ];

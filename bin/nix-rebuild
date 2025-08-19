@@ -8,4 +8,4 @@
 
 #. $nix_darwin_file_to_source
 #TMPDIR=/tmp darwin-rebuild switch --show-trace
-TMPDIR=/tmp darwin-rebuild switch --show-trace -I "darwin-config=$HOME/.nixpkgs/darwin-configuration.nix"
+TMPDIR=/tmp sudo darwin-rebuild switch --show-trace -I "darwin-config=$HOME/.nixpkgs/configuration.nix"

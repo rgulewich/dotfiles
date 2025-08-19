@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  current_user = builtins.getEnv "USER";
-  home_dir = builtins.getEnv "HOME";
+  #current_user = builtins.getEnv "USER";
+  current_user = "rob";
+  #home_dir = builtins.getEnv "HOME";
+  home_dir = "/Users/rob";
 
 in
 rec {
@@ -26,10 +28,11 @@ rec {
       pkgs.direnv
       pkgs.fira-code
       pkgs.fzf
-      pkgs.go_1_21
+      pkgs.go_1_25
+      pkgs.grpcurl
       pkgs.home-manager
       pkgs.inconsolata
-      pkgs.imagemagick7
+      pkgs.imagemagick
       pkgs.jd-diff-patch
       pkgs.jrnl
       pkgs.jq
@@ -38,7 +41,7 @@ rec {
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
-      pkgs.nodejs-18_x
+      pkgs.nodejs_24
       pkgs.niv
       pkgs.python312
       pkgs.python312Packages.pip
@@ -54,9 +57,10 @@ rec {
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
+  environment.darwinConfig = "/Users/rob/.config/nixpkgs/darwin/configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  #services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
@@ -76,7 +80,10 @@ rec {
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 4;
+  #system.stateVersion = 4;
+  system.stateVersion = 6;
+
+  system.primaryUser = "rob";
 
   # Disable documentation until https://github.com/LnL7/nix-darwin/issues/217 is fixed.
   documentation.enable = false;
