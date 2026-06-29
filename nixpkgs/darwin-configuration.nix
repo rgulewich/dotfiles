@@ -45,10 +45,12 @@ rec {
       pkgs.niv
       pkgs.python312
       pkgs.python312Packages.pip
+      pkgs.python312Packages.pyyaml
       pkgs.reattach-to-user-namespace
       pkgs.ripgrep
       pkgs.rustc
       pkgs.skhd
+      pkgs.terraform
       pkgs.tmux
       pkgs.vim
       pkgs.yq
