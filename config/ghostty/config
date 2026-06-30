@@ -12,14 +12,35 @@ font-size = 18
 
 title = " "
 
-#
-# themes: https://ghosttythemes.com/
-# Can also look here: /Applications/Ghostty.app/Contents/Resources/ghostty/themes
-#
-
-#theme = "Solarized Dark Higher Contrast"
-#theme = "iTerm2 Solarized Dark"
-theme = "Solarized Dark Patched"
-
 macos-titlebar-proxy-icon = "hidden"
-macos-titlebar-style = "transparent"
+macos-titlebar-style = tabs
+
+# Solarized Dark colors (mirrors config/alacritty/alacritty.toml).
+background = 002b36
+foreground = 839496
+
+cursor-color = 839496
+cursor-text = 002b36
+
+# draw_bold_text_with_bright_colors
+bold-is-bright = true
+
+# normal
+palette = 0=#073642
+palette = 1=#dc322f
+palette = 2=#859900
+palette = 3=#b58900
+palette = 4=#268bd2
+palette = 5=#d33682
+palette = 6=#2aa198
+palette = 7=#eee8d5
+
+# bright
+palette = 8=#002b36
+palette = 9=#cb4b16
+palette = 10=#586e75
+palette = 11=#657b83
+palette = 12=#839496
+palette = 13=#6c71c4
+palette = 14=#93a1a1
+palette = 15=#fdf6e3
