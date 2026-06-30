@@ -5,8 +5,8 @@
 #
 
 font-family = "Fira Code"
-font-style = "Light"
-font-style-italic = "Light"
+#font-style = "Light"
+#font-style-italic = "Light"
 font-style-bold = "Bold"
 font-size = 18
 
@@ -14,6 +14,8 @@ title = " "
 
 macos-titlebar-proxy-icon = "hidden"
 macos-titlebar-style = tabs
+#window-colorspace = srgb
+window-colorspace = display-p3
 
 # Solarized Dark colors (mirrors config/alacritty/alacritty.toml).
 background = 002b36
