@@ -8,6 +8,7 @@ in
 rec {
   imports = [
     ./alacritty.nix
+    ./ghostty.nix
     ./tmux.nix
     ./vim.nix
     ./zsh.nix
