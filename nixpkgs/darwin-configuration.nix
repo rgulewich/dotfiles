@@ -49,7 +49,6 @@ rec {
       pkgs.reattach-to-user-namespace
       pkgs.ripgrep
       pkgs.rustc
-      pkgs.skhd
       pkgs.terraform
       pkgs.tmux
       pkgs.vim

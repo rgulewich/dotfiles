@@ -15,7 +15,9 @@ rec {
   ] ++ local_imports;
 
   # Other dotfiles
-  home.file.".config/skhd/skhdrc".source = "${config.home.homeDirectory}/src/me/dotfiles/config/skhd/skhdrc";
+  # Leader Key config (replaces skhd's leader mode). Installed via `brew install leader-key`.
+  home.file."Library/Application Support/Leader Key/config.json".source =
+    "${config.home.homeDirectory}/src/me/dotfiles/config/leader-key/config.json";
 
   home.stateVersion = "22.05";
 }
