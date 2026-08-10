@@ -41,7 +41,7 @@ rec {
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
-      pkgs.nodejs_24
+      pkgs.nodejs
       pkgs.niv
       pkgs.python312
       pkgs.python312Packages.pip

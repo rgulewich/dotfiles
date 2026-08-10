@@ -86,6 +86,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # man
 export MANPATH="$MANPATH:/usr/local/node/share/man"
 
+# claude
+add_path $HOME/.local/bin
 
 ## Functions
 
