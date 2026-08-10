@@ -1,11 +1,6 @@
 #!/bin/bash
 
-# NIX_PATH=darwin-config=/Users/$HOME/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:/Users/$HOME/.nix-defexpr/channels
-# https://github.com/NixOS/nixpkgs/issues/84803#issuecomment-612579894
-
-# Work around https://github.com/LnL7/nix-darwin/pull/286 / https://github.com/LnL7/nix-darwin/issues/158
-#nix_darwin_file_to_source=$(grep set-environment /etc/zshenv | awk '{ print $NF }')
-
-#. $nix_darwin_file_to_source
-#TMPDIR=/tmp darwin-rebuild switch --show-trace
-TMPDIR=/tmp sudo darwin-rebuild switch --show-trace -I "darwin-config=$HOME/.nixpkgs/configuration.nix"
+# --impure is required: several home-manager modules (vim, zsh, tmux,
+# ghostty, alacritty configs) read dotfiles directly from this repo's
+# absolute path at build time rather than copying them into the flake.
+TMPDIR=/tmp sudo darwin-rebuild switch --show-trace --impure --flake "$HOME/src/me/dotfiles#lily"

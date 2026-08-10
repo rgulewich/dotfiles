@@ -9,7 +9,6 @@ let
 in
 rec {
   imports = [
-    <home-manager/nix-darwin>
     ./osx-settings.nix
   ];
 
@@ -55,14 +54,10 @@ rec {
       pkgs.yq
     ];
 
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
-  environment.darwinConfig = "/Users/rob/.config/nixpkgs/darwin/configuration.nix";
-
   # Auto upgrade nix package and the daemon service.
   #services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.bash.enable = true;

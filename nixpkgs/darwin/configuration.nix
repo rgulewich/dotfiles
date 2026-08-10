@@ -1,1 +1,0 @@
-../darwin-configuration.nix
