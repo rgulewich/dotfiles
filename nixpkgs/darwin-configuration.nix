@@ -35,13 +35,11 @@ rec {
       pkgs.jd-diff-patch
       pkgs.jrnl
       pkgs.jq
-      pkgs.lorri
       pkgs.moreutils
       pkgs.nnn
       pkgs.nmap
       pkgs.neovim
       pkgs.nodejs
-      pkgs.niv
       (pkgs.callPackage ./openspec.nix { src = openspec; })
       pkgs.python312
       pkgs.python312Packages.pip
