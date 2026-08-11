@@ -17,8 +17,9 @@
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, openspec, ... }: {
     darwinConfigurations."lily" = nix-darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      specialArgs = { inherit openspec; };
+      # The platform lives in nixpkgs.hostPlatform; darwinSystem's `system`
+      # argument is a backwards-compatibility shim.
+      specialArgs = { inherit self openspec; };
       modules = [
         ./nixpkgs/darwin-configuration.nix
         home-manager.darwinModules.home-manager

@@ -1,4 +1,4 @@
-{ config, pkgs, openspec, ... }:
+{ config, pkgs, self, openspec, ... }:
 
 let
   # Literals rather than `builtins.getEnv`: darwin-rebuild evaluates this as
@@ -7,11 +7,12 @@ let
   home_dir = "/Users/rob";
 
 in
-rec {
+{
   imports = [
     ./osx-settings.nix
   ];
 
+  nixpkgs.hostPlatform = "x86_64-darwin";
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = false;
   nixpkgs.config.allowUnsupportedSystem = false;
@@ -86,6 +87,9 @@ rec {
   # $ darwin-rebuild changelog
   #system.stateVersion = 4;
   system.stateVersion = 6;
+
+  # Makes `darwin-version` report the commit this generation was built from.
+  system.configurationRevision = self.rev or self.dirtyRev or null;
 
   system.primaryUser = "rob";
 
