@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, openspec, ... }:
 
 let
   #current_user = builtins.getEnv "USER";
@@ -42,6 +42,7 @@ rec {
       pkgs.neovim
       pkgs.nodejs
       pkgs.niv
+      (pkgs.callPackage ./openspec.nix { src = openspec; })
       pkgs.python312
       pkgs.python312Packages.pip
       pkgs.python312Packages.pyyaml
