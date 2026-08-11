@@ -63,6 +63,15 @@ rec {
   programs.bash.enable = true;
   programs.zsh.enable = true;
 
+  # `darwin-rebuild switch` evaluates this flake as root, and libgit2 refuses
+  # to read a repository owned by another user unless it is marked safe.
+  # Without this, every rebuild fails with "repository path ... is not owned
+  # by current user".
+  environment.etc."gitconfig".text = ''
+    [safe]
+    	directory = ${home_dir}/src/me/dotfiles
+  '';
+
   # Let Home Manager install and manage itself.
   #programs.home-manager.enable = true;
   #programs.tmux.enable = true;
