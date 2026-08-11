@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 let
-  current_user = builtins.getEnv "USER";
-  home_dir = builtins.getEnv "HOME";
+  # Not `builtins.getEnv "HOME"`: darwin-rebuild evaluates this as root, where
+  # that resolves to /var/root and silently points Finder at root's home.
+  home_dir = "/Users/rob";
 
 in
 {

@@ -1,9 +1,9 @@
 { config, pkgs, openspec, ... }:
 
 let
-  #current_user = builtins.getEnv "USER";
+  # Literals rather than `builtins.getEnv`: darwin-rebuild evaluates this as
+  # root, where $USER/$HOME resolve to root's, not yours.
   current_user = "rob";
-  #home_dir = builtins.getEnv "HOME";
   home_dir = "/Users/rob";
 
 in
