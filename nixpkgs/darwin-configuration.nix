@@ -42,9 +42,12 @@ in
       pkgs.neovim
       pkgs.nodejs
       (pkgs.callPackage ./openspec.nix { src = openspec; })
-      pkgs.python312
-      pkgs.python312Packages.pip
-      pkgs.python312Packages.pyyaml
+      (pkgs.python314.withPackages (ps: [
+        ps.pip
+        ps.pytest
+        ps.pytest-asyncio
+        ps.pyyaml
+      ]))
       pkgs.reattach-to-user-namespace
       pkgs.ripgrep
       pkgs.rustc
