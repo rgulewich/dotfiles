@@ -1,0 +1,15 @@
+onboarding = false
+[ui]
+agent_panel_sort = "spaces"
+
+[theme]
+name = "solarized"
+auto_switch = false
+
+[keys]
+previous_tab = "prefix+b"
+
+[[keys.command]]
+key = "cmd+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
